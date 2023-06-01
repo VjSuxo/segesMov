@@ -1,0 +1,23 @@
+select distinct xPer.apepaterno, xPer.apematerno, xPer.nombre
+from pedido xP, persona xPer
+where xP.nropedido in (
+
+select nropedido
+from detalle_pedido
+where idprod not in (
+
+select idprod
+from detalle_pedido
+where nropedido in (
+select nropedido
+from pedido
+where ciCliente in (
+select ciCliente
+from cliente xC, persona xP
+where xP.ci = xC.cicliente and xP.nacionalidad like 'Argentina'
+)
+)
+)
+)
+and xPer.ci = xP.cicliente
+order by xPer.apepaterno
