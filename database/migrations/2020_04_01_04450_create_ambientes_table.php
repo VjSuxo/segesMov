@@ -19,6 +19,10 @@ return new class extends Migration
             $table->unsignedBigInteger('controlador_id')->nullable();
             $table->foreign('controlador_id')->references('id')->on('controladores');
 
+            $table->unsignedBigInteger('infraestructura_id')->nullable();
+            $table->foreign('infraestructura_id')->references('id')->on('infraestructuras');
+
+
             $table->timestamps();
         });
     }

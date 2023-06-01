@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('nombre');
             $table->text('descripcion');
             $table->string('tipo');
+            $table->string('url');
+            $table->string('estado');
+
             $table->unsignedBigInteger('controlador_id')->nullable();
             $table->foreign('controlador_id')->references('id')->on('controladores');
             $table->timestamps();

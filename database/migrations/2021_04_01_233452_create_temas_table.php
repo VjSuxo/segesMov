@@ -18,10 +18,11 @@ return new class extends Migration
             $table->date('fecha');
             $table->unsignedBigInteger('evento_id');
             $table->unsignedBigInteger('expositor_id');
+            $table->unsignedBigInteger('ambiente_id');
 
             $table->foreign('evento_id')->references('id')->on('eventos');
             $table->foreign('expositor_id')->references('id')->on('expositores');
-
+            $table->foreign('ambiente_id')->references('id')->on('eambientes');
 
             $table->timestamps();
 
