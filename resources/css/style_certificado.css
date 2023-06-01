@@ -1,0 +1,53 @@
+.contenedor{
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(181deg,
+                             rgba(28,28,28,0.9) 20%,
+                              rgba(43,113,151,0.7) 150%),
+                             rgba(28,28,28,0.8);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    scroll-behavior: smooth;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 50px;
+}
+.container-fluid {
+    
+    padding: 50px;
+
+}
+h1 {
+
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+h2{
+    font-size: 60px;
+}
+p {
+    font-size: 20px;
+     margin-bottom: 20px;
+}
+
+
+.curso {
+    font-size: 25px;
+}
+.signature {
+    margin-top: 50px;
+
+}
+.signature p {
+    margin-bottom: 5px;
+}
+.signature img {
+    max-width: 200px;
+    margin-top: 10px;
+}

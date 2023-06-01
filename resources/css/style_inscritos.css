@@ -1,0 +1,20 @@
+.lado{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+}
+
+.subTexto{
+    color: white;
+}
+
+.botones{
+    border: 1px solid white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 35%;
+    height: 20%;
+    margin-left: 1%;
+}
+
+

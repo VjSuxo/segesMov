@@ -1,0 +1,9 @@
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background : linear-gradient(rgba(68, 68, 68, 0.6), rgba(0,0,0,0.6) ), url('https://unsplash.com/es/fotos/Ev22G9_2WGw');
+}

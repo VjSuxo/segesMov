@@ -1,0 +1,12 @@
+body{
+    min-height: 100vh;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,0.5634628851540616) 0%, rgba(28,28,28,0.27494747899159666) 100%);
+        border-radius: 25px;
+        height: 70vh;
+}
+
+.General{
+    margin-top: 50px ;
+}
+
