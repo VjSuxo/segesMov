@@ -1,0 +1,6 @@
+env: .env
+build:
+  - name: Composer Install
+    command: composer install --prefer-dist --no-progress --no-suggest --no-interaction
+  - name: Artisan Migrate
+    command: php artisan migrate --force
