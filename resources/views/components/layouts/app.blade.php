@@ -10,6 +10,12 @@
      <!-- Fonts -->
      <link rel="preconnect" href="https://fonts.bunny.net">
      <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+<style>
+    body{
+    background : linear-gradient(rgba(68, 68, 68, 0.6), rgba(0,0,0,0.6) ), url('https://unsplash.com/es/fotos/Ev22G9_2WGw');
+    }
+</style>
+
 </head>
 <body >
 
