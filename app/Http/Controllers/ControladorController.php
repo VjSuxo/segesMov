@@ -156,8 +156,8 @@ class ControladorController extends Controller
         $pdf->loadHtml('<style>' . $css . '</style>' . view('certificado', [ 'usuario'=>$usuario , 'evento'=>$evento] ));
         $pdf->setPaper('A4', 'landscape');
         $pdf->render();
-        $nombreArch = $usuario->id.'.pdf';
-            $pdf->save(('public/pdf/'.$nombreArch));
+        $nombreArch =  public_path('pdf/'.$usuario->id.'.pdf');
+            file_put_contents($nombreArch, $dompdf->output());
             $ge = Carbon::now()->toDateString();
           $cer =  Certificado::create([
             'fecha' => $ge,
