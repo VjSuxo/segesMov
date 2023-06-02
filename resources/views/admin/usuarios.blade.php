@@ -24,43 +24,45 @@
             <input type="text" name="query" placeholder="Buscar usuarios...">
             <button type="submit">Buscar</button>
         </form>
-        <table class="table-responsive table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th scope="col">CI</th>
-                <th scope="col">Role</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Fecha Nacimiento</th>
-                <th scope="col">Correo</th>
-                <th scope="col">Genero</th>
-                <th scope="col">Modificar</th>
-                <th scope="col">Historial</th>
-              </tr>
-            </thead>
-            <tbody>
-              @foreach ($usuarios as $usuario)
-                <tr>
-                    <th scope="row">{{$usuario->id}}</th>
-                    <td>{{$usuario->role}} </td>
-                    <td>{{$usuario->name}}</td>
-                    <td>{{$usuario->apellido_Pat}} {{$usuario->apellido_Mat}} </td>
-                    <td>{{$usuario->anio_Nac}}</td>
-                    <td>{{$usuario->email}}</td>
-                    <td>{{$usuario->genero}}</td>
-                    <td> <a class="btn btn-primary" href="{{ route('admin.userUpdate',$usuario->id) }}">Modificar</a></td>
-                    <td> <a class="btn btn-primary" href="{{ route('admin.usuariosHistorial',$usuario->id) }}">Ver</a> </td>
-                    <td>
-                      <form action="{{ route('usuarios.eliminar', ['usuario' => $usuario->id]) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-primary">Eliminar</button>
-                      </form>
-                    </td>
-                </tr>
-              @endforeach
-              {{ $usuarios->links('pagination.custom') }}
-            </tbody>
-          </table>
+        <div class="table-responsive">
+            <table class=" table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">CI</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Fecha Nacimiento</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Genero</th>
+                    <th scope="col">Modificar</th>
+                    <th scope="col">Historial</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach ($usuarios as $usuario)
+                    <tr>
+                        <th scope="row">{{$usuario->id}}</th>
+                        <td>{{$usuario->role}} </td>
+                        <td>{{$usuario->name}}</td>
+                        <td>{{$usuario->apellido_Pat}} {{$usuario->apellido_Mat}} </td>
+                        <td>{{$usuario->anio_Nac}}</td>
+                        <td>{{$usuario->email}}</td>
+                        <td>{{$usuario->genero}}</td>
+                        <td> <a class="btn btn-primary" href="{{ route('admin.userUpdate',$usuario->id) }}">Modificar</a></td>
+                        <td> <a class="btn btn-primary" href="{{ route('admin.usuariosHistorial',$usuario->id) }}">Ver</a> </td>
+                        <td>
+                          <form action="{{ route('usuarios.eliminar', ['usuario' => $usuario->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-primary">Eliminar</button>
+                          </form>
+                        </td>
+                    </tr>
+                  @endforeach
+                  {{ $usuarios->links('pagination.custom') }}
+                </tbody>
+              </table>
+        </div>
     </div>
 </x-layouts>
