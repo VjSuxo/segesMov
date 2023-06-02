@@ -134,6 +134,26 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         border: 7;
         border-color: white;
     }
+
+    @media (max-width: 600px) {
+  .parent {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .div1,
+  .div2,
+  .div3,
+  .div4,
+  .div5,
+  .div6 {
+    grid-area: auto;
+    margin: 10px;
+  }
+}
+
+
+
     </style>
 
     <div class="contenedor">
