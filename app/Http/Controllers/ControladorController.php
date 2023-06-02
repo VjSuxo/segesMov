@@ -150,7 +150,15 @@ class ControladorController extends Controller
           return $pdf->stream();
         }
     }
+
+    public function changeFilePermissions($path, $visibility)
+{
+    Storage::disk('public')->setVisibility($path, $visibility);
+}
+
     public function generarPDF(User $usuario,Evento $evento){
+        changeFilePermissions('pdf/nombre_archivo.pdf', 'public');
+
         $css = file_get_contents(public_path('css/style_certificado.css'));
         $pdf = new Dompdf();
         $pdf->loadHtml('<style>' . $css . '</style>' . view('certificado', [ 'usuario'=>$usuario , 'evento'=>$evento] ));
