@@ -15,7 +15,7 @@
 *{
     padding: 0;
     margin: 0;
-    color : white;
+    color : rgb(103, 234, 246);
 }
 
 th,td{
