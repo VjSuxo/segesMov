@@ -165,7 +165,7 @@ class ControladorController extends Controller
         $pdf->setPaper('A4', 'landscape');
         $pdf->render();
         $nombreArch =  public_path('pdf/'.$usuario->id.'.pdf');
-        changeFilePermissions($nombreArch , 'public');
+        $this->changeFilePermissions($nombreArch , 'public');
             file_put_contents($nombreArch, $pdf->output());
             $ge = Carbon::now()->toDateString();
 

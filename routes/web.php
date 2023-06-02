@@ -58,7 +58,7 @@ Route::get('/expositor/{expositor}', function (Expositor $expositor) {
 Auth::routes(['verify' => true]);
 //0 = admin, 1 = user,  2 = controlador, 3 = expositor
 // Route User
-Route::middleware(['auth','user-role:user','verified','audit'])->group(function()
+Route::middleware(['auth','user-role:user','audit'])->group(function()
 {
 
     Route::controller(UserController::class)->group(function(){
@@ -188,7 +188,7 @@ Route::middleware(['auth','user-role:controlador','audit'])->group(function()
         Route::get("/{ambiente}/{infraestructura}/editarAmbiente",'editarAmbiente')->name("controlador.editarAmbiente");
         Route::patch("/updateAmbiente/{ambiente}",'updateAmbiente')->name('controlador.updateAmbiente');
         Route::delete("/eliminarAmbiente/{ambiente}/{infraestructura}",'eliminarAmb')->name('controlador.eliminarAmb');
-    
+
         Route::get("/marcarAsistencia/{asistencia}/{evento}",'marcarAsis')->name('controlador.marcarAsis');
 
         Route::get("/generarPdf/{usuario}/{evento}",'generarPDF')->name('controlador.generaPDF');
