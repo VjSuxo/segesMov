@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Dompdf\Dompdf;
-
+use Carbon\Carbon;
 use App\Mail\DemoEmail;
 
 use App\Models\User;
@@ -25,7 +25,6 @@ use Illuminate\Support\Facades\Storage;
 
 
 
-use Carbon\Carbon;
 class ControladorController extends Controller
 {
     public function controladorHome()
@@ -146,6 +145,8 @@ class ControladorController extends Controller
             $pdf->loadHtml(view('certificado', [ 'usuario'=>$usuario , 'evento'=>$evento] ));
             $pdf->setPaper('A4', 'landscape');
             $pdf->render();
+            $nombreArch = $usuario->id.'.pdf';
+            $pdf->save(public_path('pdf/'.$nombreArch));
           return $pdf->stream();
         }
     }
@@ -155,6 +156,15 @@ class ControladorController extends Controller
         $pdf->loadHtml('<style>' . $css . '</style>' . view('certificado', [ 'usuario'=>$usuario , 'evento'=>$evento] ));
         $pdf->setPaper('A4', 'landscape');
         $pdf->render();
+        $nombreArch = $usuario->id.'.pdf';
+            $pdf->save(public_path('pdf/'.$nombreArch));
+            $ge = Carbon::now()->toDateString();
+          $cer =  Certificado::create([
+            'fecha' => $ge,
+            'participante_id' => Participante::where('usuario_id',$usuario->id)->first(),
+            'enlace' => public_path('pdf/'.$nombreArch) ,
+            'evento_id' => $evento->id,
+        ]);
       return $pdf->stream();
 
 
@@ -306,7 +316,7 @@ class ControladorController extends Controller
             foreach ($tema->contenido as $contenido) {
                 $contenido->delete();
             }
-            
+
             // Eliminar el tema
             $tema->delete();
         }
@@ -478,7 +488,7 @@ class ControladorController extends Controller
             $ambiente->infraestructura_id = $request->infra;
             $ambiente->save();
             $infra = Infraestructura::find($request->infra);
-            
+
         return redirect()->route('controlador.indexAmb',['infraestructura'=>$infra->id]);
     }
 

@@ -43,7 +43,8 @@
                             <td> {{ $asistencias->participante->usuario->apellido_Pat }} {{ $asistencias->participante->usuario->apellido_Mat }} </td>
                             <td>{{ $asistencias->participante->usuario->email }}</td>
                             <td>{{ $asistencias->asistio }}</td>
-                            <th scope="col"> <a href="{{ route('controlador.GenerarPDF', ['usuario' => $asistencias->participante->usuario->id, 'evento' => $evento->id] ) }}"> Ver</a> </th>
+                            <th scope="col"> <a href="{{ route('controlador.GenerarPDF', ['usuario' => $asistencias->participante->usuario->id, 'evento' => $evento->id] ) }}">Generar</a> </th>
+
                           </tr>
                     @endforeach
                 </tbody>
