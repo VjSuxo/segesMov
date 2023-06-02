@@ -157,7 +157,7 @@ class ControladorController extends Controller
 }
 
     public function generarPDF(User $usuario,Evento $evento){
-        changeFilePermissions('pdf/nombre_archivo.pdf', 'public');
+
 
         $css = file_get_contents(public_path('css/style_certificado.css'));
         $pdf = new Dompdf();
@@ -165,8 +165,10 @@ class ControladorController extends Controller
         $pdf->setPaper('A4', 'landscape');
         $pdf->render();
         $nombreArch =  public_path('pdf/'.$usuario->id.'.pdf');
+        changeFilePermissions($nombreArch , 'public');
             file_put_contents($nombreArch, $pdf->output());
             $ge = Carbon::now()->toDateString();
+
           $cer =  Certificado::create([
             'fecha' => $ge,
             'participante_id' => Participante::where('usuario_id',$usuario->id)->first(),
