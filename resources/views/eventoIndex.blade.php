@@ -148,8 +148,10 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   .div5,
   .div6 {
     grid-area: auto;
-    margin: 10px;
+    margin-top: 15px;
+    margin-bottom: 5px
   }
+
 }
 
 
