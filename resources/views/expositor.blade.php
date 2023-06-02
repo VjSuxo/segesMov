@@ -1,6 +1,6 @@
 <x-layouts.app >
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    @vite(['/resources/css/style_expositorV.css'])
+
     <style>
         .box {
     width: 700px;
