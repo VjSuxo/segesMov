@@ -938,7 +938,7 @@ html {
           <div class="content-banner">
             <p>SEGES</p>
             <h2>Sistema de Eventos <br />Academicos</h2>
-            <a href="#">Iniciar ahora</a>
+
           </div>
         </section>
         <main class ="main-conten">
