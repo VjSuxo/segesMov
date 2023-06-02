@@ -110,39 +110,41 @@ box-shadow: 10px 10px 9px 0px rgba(0,0,0,0.67);
             </div>
 
             <div class="lado">
-                <table class="table-responsive">
-                    <thead>
-                      <tr>
-                        <th scope="col">CI</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Correo</th>
-                        <th scope="col">Estado</th>
-                      </tr>
-                    </thead>
-                    <tbody>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">CI</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Estado</th>
+                          </tr>
+                        </thead>
+                        <tbody>
 
-                        @foreach ( $evento->eventoParticipante as $participante )
-                        <tr>
-                            <th scope="row"> {{ $participante->participante->usuario->id }} </th>
-                            <td>{{ $participante->participante->usuario->name }} </td>
-                            <td>{{ $participante->participante->usuario->apellido_Pat }} {{ $participante->participante->usuario->apellido_Mat }} </td>
-                            <td>{{ $participante->participante->usuario->email }} </td>
-                            <td>
-                                @if ($participante->inscrito == 1)
-                                    Inscrito
-                                @endif
-                                @if ($participante->reservado == 1)
-                                    Reservado
-                                @endif
-                            </td>
+                            @foreach ( $evento->eventoParticipante as $participante )
+                            <tr>
+                                <th scope="row"> {{ $participante->participante->usuario->id }} </th>
+                                <td>{{ $participante->participante->usuario->name }} </td>
+                                <td>{{ $participante->participante->usuario->apellido_Pat }} {{ $participante->participante->usuario->apellido_Mat }} </td>
+                                <td>{{ $participante->participante->usuario->email }} </td>
+                                <td>
+                                    @if ($participante->inscrito == 1)
+                                        Inscrito
+                                    @endif
+                                    @if ($participante->reservado == 1)
+                                        Reservado
+                                    @endif
+                                </td>
 
-                        </tr>
-                        @endforeach
+                            </tr>
+                            @endforeach
 
 
-                    </tbody>
-                  </table>
+                        </tbody>
+                      </table>
+                </div>
                 <div class="botones">
                     @if ( $evento->estado == 0 )
                     <div class="lado">

@@ -18,26 +18,28 @@
           </li>
         </ul>
     </div>
-    <div class="container General">
-        <table class="table-responsive">
-            <thead>
-              <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Capacidad</th>
-                <th scope="col">Estado</th>
-              </tr>
-            </thead>
-            <tbody>
-                @foreach ( $ambientes as $ambiente )
-                <tr>
-                    <th scope="row"> {{$ambiente->id}} </th>
-                    <td> {{ $ambiente->nombre }} </td>
-                    <td> {{ $ambiente->capacidad }} </td>
-                    <td> {{ $ambiente->estado}} </td>
+    <div class="container General  ">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Capacidad</th>
+                    <th scope="col">Estado</th>
                   </tr>
-                @endforeach
-            </tbody>
-          </table>
+                </thead>
+                <tbody>
+                    @foreach ( $ambientes as $ambiente )
+                    <tr>
+                        <th scope="row"> {{$ambiente->id}} </th>
+                        <td> {{ $ambiente->nombre }} </td>
+                        <td> {{ $ambiente->capacidad }} </td>
+                        <td> {{ $ambiente->estado}} </td>
+                      </tr>
+                    @endforeach
+                </tbody>
+              </table>
+        </div>
     </div>
 </x-layouts>

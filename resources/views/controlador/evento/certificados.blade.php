@@ -23,8 +23,8 @@
         </div>
 
         <div class="container General">
-
-            <table class="table-responsive">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
                 <thead>
                   <tr>
                     <th scope="col">CI</th>
@@ -48,6 +48,8 @@
                     @endforeach
                 </tbody>
               </table>
+        </div>
+
         </div>
     </div>
 </x-layouts.app>

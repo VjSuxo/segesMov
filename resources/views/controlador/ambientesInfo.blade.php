@@ -226,51 +226,53 @@ box-shadow: 10px 10px 9px 0px rgba(0,0,0,0.67);
             <div class="row align-items-start">
                 <div class="col m-5 border">
                     <h1 class="titulo">Agenda</h1>
-                    <table class="table-responsive">
-                        <thead>
-                          <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Horario</th>
-                            <th scope="col">Dia</th>
-                            <th scope="col">Mes</th>
-                            <th scope="col">Año</th>
-                            <th scope="col">Tiempo</th>
-                          </tr>
-                        </thead>
-                        <tbody>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                              <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Horario</th>
+                                <th scope="col">Dia</th>
+                                <th scope="col">Mes</th>
+                                <th scope="col">Año</th>
+                                <th scope="col">Tiempo</th>
+                              </tr>
+                            </thead>
+                            <tbody>
 
-                          @foreach ( $ambiente->temas as $tema )
-                          <tr>
-                            <th scope="row"> {{ $tema->id }} </th>
-                            <td> {{$tema->hora_inicio}} {{$tema->hora_fin}} </td>
-                            <td> {{
-                                \Carbon\Carbon::parse($tema->fecha)->day
-                              }}
-                         <!--    {{
-                                \Carbon\Carbon::parse($tema->fecha)->locale('es')->isoFormat('dddd')
-                             }}  -->
+                              @foreach ( $ambiente->temas as $tema )
+                              <tr>
+                                <th scope="row"> {{ $tema->id }} </th>
+                                <td> {{$tema->hora_inicio}} {{$tema->hora_fin}} </td>
+                                <td> {{
+                                    \Carbon\Carbon::parse($tema->fecha)->day
+                                  }}
+                             <!--    {{
+                                    \Carbon\Carbon::parse($tema->fecha)->locale('es')->isoFormat('dddd')
+                                 }}  -->
+                                </td>
+                                <td>  {{ \Carbon\Carbon::parse($tema->fecha)->locale('es')->monthName }} </td>
+                            <td>    {{ \Carbon\Carbon::parse($tema->fecha)->year }}</td>
+                            <td>
+                                @if (\Carbon\Carbon::parse($tema->hora_inicio)->hour > \Carbon\Carbon::parse($tema->hora_fin)->hour)
+                                    {{  \Carbon\Carbon::parse($tema->hora_inicio)->hour -
+                                    \Carbon\Carbon::parse($tema->hora_fin)->hour }}
+                                @else
+                                {{  \Carbon\Carbon::parse($tema->hora_fin)->hour -
+                                    \Carbon\Carbon::parse($tema->hora_inicio)->hour }}
+                                @endif
+                                    horas
+
                             </td>
-                            <td>  {{ \Carbon\Carbon::parse($tema->fecha)->locale('es')->monthName }} </td>
-                        <td>    {{ \Carbon\Carbon::parse($tema->fecha)->year }}</td>
-                        <td>
-                            @if (\Carbon\Carbon::parse($tema->hora_inicio)->hour > \Carbon\Carbon::parse($tema->hora_fin)->hour)
-                                {{  \Carbon\Carbon::parse($tema->hora_inicio)->hour -
-                                \Carbon\Carbon::parse($tema->hora_fin)->hour }}
-                            @else
-                            {{  \Carbon\Carbon::parse($tema->hora_fin)->hour -
-                                \Carbon\Carbon::parse($tema->hora_inicio)->hour }}
-                            @endif
-                                horas
 
-                        </td>
-
-                          </tr>
-                          @endforeach
+                              </tr>
+                              @endforeach
 
 
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <div class="col m-5 border d-flex flex-column align-items-center  informacionInfra" >

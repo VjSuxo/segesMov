@@ -27,35 +27,37 @@
                 <div class="row align-items-start">
                         <div class="col">
                             <h1>TEMAS</h1>
-                            <table class="table-responsive">
-                                <thead>
-                                  <tr>
-                                    <th scope="col">Id</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Descripcion</th>
-                                    <th scope="col">Hora Inicio</th>
-                                    <th scope="col">Hora Fin</th>
-                                    <th scope="col">Fecha</th>
-                                    <th scope="col">Expositor</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  @foreach ($evento->temas as $tema)
-                                    <tr>
-                                      <th scope="row"> {{ $tema->id }} </th>
-                                      <td> {{ $tema->nombre }} </td>
-                                      <td> {{ $tema->descripcion }} </td>
-                                      <td> {{ $tema->hora_inicio }} </td>
-                                      <td> {{ $tema->hora_fin }} </td>
-                                      <td> {{ $tema->fecha }} </td>
-                                      <td> {{ $tema->expositor->usuario->name }} </td>
-                                      <td><a  href="{{ route('controlador.modTema',['evento'=>$evento->id,'tema'=>$tema->id]) }}" class="btn btn-primary">Modificar </a></td>
-                                    </tr>
-                                  @endforeach
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Descripcion</th>
+                                        <th scope="col">Hora Inicio</th>
+                                        <th scope="col">Hora Fin</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Expositor</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      @foreach ($evento->temas as $tema)
+                                        <tr>
+                                          <th scope="row"> {{ $tema->id }} </th>
+                                          <td> {{ $tema->nombre }} </td>
+                                          <td> {{ $tema->descripcion }} </td>
+                                          <td> {{ $tema->hora_inicio }} </td>
+                                          <td> {{ $tema->hora_fin }} </td>
+                                          <td> {{ $tema->fecha }} </td>
+                                          <td> {{ $tema->expositor->usuario->name }} </td>
+                                          <td><a  href="{{ route('controlador.modTema',['evento'=>$evento->id,'tema'=>$tema->id]) }}" class="btn btn-primary">Modificar </a></td>
+                                        </tr>
+                                      @endforeach
 
 
-                                </tbody>
-                              </table>
+                                    </tbody>
+                                  </table>
+                            </div>
                         </div>
                         <div class="col">
                             <h1>AGREGAR TEMAS</h1>

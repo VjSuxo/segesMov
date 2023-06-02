@@ -14,32 +14,34 @@
         </div>
         <div class="container General">
           <div class="container General">
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Horario</th>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Evento</th>
-                    <th scope="col">Opcion</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    @foreach ( $temas as $tema )
-                    <tr>
-                        <th scope="row"> {{ $tema->id }} </th>
-                        <td> {{ $tema->nombre }} </td>
-                        <td> {{ $tema->hora_inicio }} a {{ $tema->hora_fin }} </td>
-                        <td> {{ $tema->fecha }} </td>
-                        <td> {{ $tema->evento->nombre}} </td>
-                        <td><a type="button"  href="{{ route('expositor.eventoMaterial',$tema->id) }}" class="btn btn-primary">Material</a></td>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Horario</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Evento</th>
+                        <th scope="col">Opcion</th>
                       </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ( $temas as $tema )
+                        <tr>
+                            <th scope="row"> {{ $tema->id }} </th>
+                            <td> {{ $tema->nombre }} </td>
+                            <td> {{ $tema->hora_inicio }} a {{ $tema->hora_fin }} </td>
+                            <td> {{ $tema->fecha }} </td>
+                            <td> {{ $tema->evento->nombre}} </td>
+                            <td><a type="button"  href="{{ route('expositor.eventoMaterial',$tema->id) }}" class="btn btn-primary">Material</a></td>
+                          </tr>
 
-                    @endforeach
+                        @endforeach
 
-                </tbody>
-              </table>
+                    </tbody>
+                  </table>
+            </div>
         </div>
 
         </div>

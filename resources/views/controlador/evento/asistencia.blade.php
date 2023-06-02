@@ -22,28 +22,31 @@
           </ul>
         </div>
         <div class="container General">
-            <table class="table-responsive">
-                <thead>
-                  <tr>
-                    <th scope="col">CI</th>
-                    <th scope="col">Nombra</th>
-                    <th scope="col">Apellido</th>
-                    <th scope="col">Asistencia</th>
-                    <th scope="col">Marcar Asistencia</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @foreach ( $evento->asistencias as $asistencia )
-                    <tr>
-                        <th scope="row"> {{ $asistencia->participante->usuario->id }} </th>
-                        <td> {{ $asistencia->participante->usuario->name }} </td>
-                        <td> {{ $asistencia->participante->usuario->apellido_Pat }} {{ $asistencia->participante->usuario->apellido_Mat }} </td>
-                        <td> {{ $asistencia->asistio }} </td>
-                        <td> <a href=" {{ route('controlador.marcarAsis',['asistencia'=>$asistencia->id,'evento'=>$evento->id]) }} "> Marcar Asistencia </a> </td>
-                    </tr>
-                  @endforeach
-                </tbody>
-              </table>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">CI</th>
+                        <th scope="col">Nombra</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Asistencia</th>
+                        <th scope="col">Marcar Asistencia</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach ( $evento->asistencias as $asistencia )
+                        <tr>
+                            <th scope="row"> {{ $asistencia->participante->usuario->id }} </th>
+                            <td> {{ $asistencia->participante->usuario->name }} </td>
+                            <td> {{ $asistencia->participante->usuario->apellido_Pat }} {{ $asistencia->participante->usuario->apellido_Mat }} </td>
+                            <td> {{ $asistencia->asistio }} </td>
+                            <td> <a href=" {{ route('controlador.marcarAsis',['asistencia'=>$asistencia->id,'evento'=>$evento->id]) }} "> Marcar Asistencia </a> </td>
+                        </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
+            </div>
+
         </div>
     </div>
 

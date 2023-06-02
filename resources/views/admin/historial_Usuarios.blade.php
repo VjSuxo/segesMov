@@ -22,30 +22,32 @@
         <div class="border">
             <a class="btn btn-primary  position-absolute top-10 start-50 translate-middle"  href="{{ url()->previous() }}">Regresasr</a>
         </div>
-        <table class="mt-5 table-responsive">
-            <thead>
-              <tr>
-                <th scope="col">id</th>
-                <th scope="col">Accion</th>
-                <th scope="col">Rol</th>
-                <th scope="col">Fecha </th>
-                <th scope="col">Hora</th>
-              </tr>
-            </thead>
-            <tbody>
-              @foreach ($auditorias as $info)
-                <tr>
-                    <th scope="row">{{$info->id}}</th>
-                    <td>{{$info->accion}} </td>
-                    <td>{{$info->modelo}}</td>
-                    <td>{{  \Carbon\Carbon::parse($info->created_at)->toDateString() }}</td>
-                    <td>{{  \Carbon\Carbon::parse($info->created_at)->hour }} : {{ \Carbon\Carbon::parse($info->created_at)->minute }}</td>
-                </tr>
-              @endforeach
+        <div class="table-responsive">
+            <table class="mt-5 table table-bordered table-striped ">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Accion</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">Fecha </th>
+                    <th scope="col">Hora</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach ($auditorias as $info)
+                    <tr>
+                        <th scope="row">{{$info->id}}</th>
+                        <td>{{$info->accion}} </td>
+                        <td>{{$info->modelo}}</td>
+                        <td>{{  \Carbon\Carbon::parse($info->created_at)->toDateString() }}</td>
+                        <td>{{  \Carbon\Carbon::parse($info->created_at)->hour }} : {{ \Carbon\Carbon::parse($info->created_at)->minute }}</td>
+                    </tr>
+                  @endforeach
 
-            </tbody>
+                </tbody>
 
-          </table>
+              </table>
+        </div>
 
             {{ $auditorias->links('pagination.custom') }}
 
