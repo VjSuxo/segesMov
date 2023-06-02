@@ -18,6 +18,10 @@
     color : white;
 }
 
+th,td{
+    color : white;
+}
+
 nav{
     background: linear-gradient(181deg,
     rgba(43,113,151,0.7)  0%,
