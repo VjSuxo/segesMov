@@ -145,8 +145,8 @@ class ControladorController extends Controller
             $pdf->loadHtml(view('certificado', [ 'usuario'=>$usuario , 'evento'=>$evento] ));
             $pdf->setPaper('A4', 'landscape');
             $pdf->render();
-            $nombreArch = $usuario->id.'.pdf';
-            $pdf->save(public_path('pdf/'.$nombreArch));
+            $nombreArch =  public_path('pdf/'.$usuario->id.'.pdf');
+            file_put_contents($nombreArch, $dompdf->output());
           return $pdf->stream();
         }
     }
