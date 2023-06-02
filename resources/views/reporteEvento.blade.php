@@ -1,6 +1,17 @@
 @vite([ 'resources/css/style_reporteE.css',])
     <div class="contenedor">
+<style>
+    table {
+    border-collapse: collapse;
+    border: 1px solid black;
+  }
 
+  td, th {
+    border: 1px solid black;
+    font-family: Consolas, monospace;
+  }
+
+</style>
         <div class="container General">
           <div class="container General">
             <table class="table">

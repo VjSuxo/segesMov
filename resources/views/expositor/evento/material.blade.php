@@ -1,5 +1,35 @@
 <x-layouts.app >
     @vite(['resources/css/style_cardsMaterial.css','resources/css/style_inscritos.css'])
+    <style>
+        .card{
+    background: rgba(43,113,151,0.7);
+    border-radius: 15px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+        .lado{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+}
+
+.subTexto{
+    color: white;
+}
+
+.botones{
+    border: 1px solid white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 35%;
+    height: 20%;
+    margin-left: 1%;
+}
+
+
+    </style>
     <div class="contenedor">
         <div class="navegadorUsuario">
             <ul class="nav nav-tabs">

@@ -1,5 +1,75 @@
 <x-layouts.app>
     @vite(['resources/css/style_inscritos.css','resources/css/style_ListaEstado.css'])
+
+    <style>
+
+.lado{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+}
+
+.subTexto{
+    color: white;
+}
+
+.botones{
+    border: 1px solid white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 35%;
+    height: 20%;
+    margin-left: 1%;
+}
+
+
+.listaEstado{
+    margin-left: 10%;
+}
+
+.card{
+    width: 100%;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+}
+
+.ocupado{
+    background-color: rgb(183, 67, 67);
+
+}
+
+.reservado{
+    background-color: rgb(134, 56, 134);
+}
+
+.libre{
+    background-color: rgb(50, 157, 50);
+}
+
+.mantenimiento{
+    background-color: rgb(202, 202, 46);
+}
+
+.btn{
+    background-color: #4A8DB7;
+    border-color: #4A8DB7;
+    -webkit-box-shadow: 10px 10px 9px 0px rgba(0,0,0,0.67);
+-moz-box-shadow: 10px 10px 9px 0px rgba(0,0,0,0.67);
+box-shadow: 10px 10px 9px 0px rgba(0,0,0,0.67);
+}
+
+.card-title{
+    color: white;
+    font-size: 20px;
+}
+
+
+
+
+    </style>
+
     <div class="contenedor">
         <div class="navegadorUsuario">
             <ul class="nav nav-tabs">
