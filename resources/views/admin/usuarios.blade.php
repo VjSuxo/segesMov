@@ -24,7 +24,7 @@
             <input type="text" name="query" placeholder="Buscar usuarios...">
             <button type="submit">Buscar</button>
         </form>
-        <table class="table-responsive">
+        <table class="table-responsive table table-bordered table-striped">
             <thead>
               <tr>
                 <th scope="col">CI</th>
