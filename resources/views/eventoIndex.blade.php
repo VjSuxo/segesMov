@@ -274,7 +274,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
                     </div>
                 </div>
 
-                <div class="div5">
+                <div class="div5" style="margin-top: 25px">
                     <div class="cuerpo">
                             <h1>Contenido</h1>
                             <ol class="list-group list-group-numbered">
