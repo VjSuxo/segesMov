@@ -14,7 +14,7 @@
               <li class="nav-item activado">
                 <a class="nav-link"  href="{{ route('admin.eventos') }}">Eventos</a>
               </li>
-             
+
               <li class="nav-item">
                 <a class="nav-link"  href="{{  route('admin.ambiente') }}">Ambiente</a>
               </li>
@@ -31,7 +31,7 @@
                 <div class="row align-items-start">
                         <div class="col">
                             <h1>TEMAS</h1>
-                            <table class="table">
+                            <table class="table-responsive">
                                 <thead>
                                   <tr>
                                     <th scope="col">Id</th>

@@ -27,7 +27,7 @@
                 <div class="row align-items-start">
                         <div class="col">
                             <h1>TEMAS</h1>
-                            <table class="table">
+                            <table class="table-responsive">
                                 <thead>
                                   <tr>
                                     <th scope="col">Id</th>

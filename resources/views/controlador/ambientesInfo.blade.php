@@ -226,7 +226,7 @@ box-shadow: 10px 10px 9px 0px rgba(0,0,0,0.67);
             <div class="row align-items-start">
                 <div class="col m-5 border">
                     <h1 class="titulo">Agenda</h1>
-                    <table class="table">
+                    <table class="table-responsive">
                         <thead>
                           <tr>
                             <th scope="col">Id</th>

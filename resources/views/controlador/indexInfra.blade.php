@@ -96,7 +96,7 @@ box-shadow: 10px 10px 9px 0px rgba(0,0,0,0.67);
             <h1 class="titulo">{{ $infra->nombre }} </h1>
             <a class="btn btn-primary" href="{{  route('controlador.crearAmbiente2',['infraestructura'=>$infra->id]) }}">Crear Ambiente</a>
             <div class="table-responsive">
-                <table class="table">
+                <table class="table-responsive">
                     <thead>
                         <tr>
                           <th scope="col">ID</th>

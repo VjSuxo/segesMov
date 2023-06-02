@@ -18,7 +18,7 @@
         <div class="container General">
           <div class="container General">
             <a href=" {{ route('controlador.imprimir') }} " class="btn btn-primary mt-5" >IMPRIMIR</a>
-            <table class="table">
+            <table class="table-responsive">
                 <thead>
                   <tr>
                     <th scope="col">Id</th>

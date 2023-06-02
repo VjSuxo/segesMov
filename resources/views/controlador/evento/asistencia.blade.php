@@ -22,7 +22,7 @@
           </ul>
         </div>
         <div class="container General">
-            <table class="table">
+            <table class="table-responsive">
                 <thead>
                   <tr>
                     <th scope="col">CI</th>

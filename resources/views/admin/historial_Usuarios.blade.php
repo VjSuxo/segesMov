@@ -12,7 +12,7 @@
           <li class="nav-item">
             <a class="nav-link"  href="{{ route('admin.eventos') }}">Eventos</a>
           </li>
-        
+
           <li class="nav-item">
             <a class="nav-link"  href="{{  route('admin.ambiente') }}">Ambiente</a>
           </li>
@@ -22,7 +22,7 @@
         <div class="border">
             <a class="btn btn-primary  position-absolute top-10 start-50 translate-middle"  href="{{ url()->previous() }}">Regresasr</a>
         </div>
-        <table class="mt-5 table">
+        <table class="mt-5 table-responsive">
             <thead>
               <tr>
                 <th scope="col">id</th>

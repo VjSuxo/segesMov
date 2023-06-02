@@ -110,7 +110,7 @@ box-shadow: 10px 10px 9px 0px rgba(0,0,0,0.67);
             </div>
 
             <div class="lado">
-                <table class="table">
+                <table class="table-responsive">
                     <thead>
                       <tr>
                         <th scope="col">CI</th>

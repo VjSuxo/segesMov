@@ -12,7 +12,7 @@
           <li class="nav-item">
             <a class="nav-link"  href="{{ route('admin.eventos') }}">Eventos</a>
           </li>
-         
+
           <li class="nav-item">
             <a class="nav-link"  href="{{  route('admin.ambiente') }}">Ambiente</a>
           </li>
@@ -24,7 +24,7 @@
             <input type="text" name="query" placeholder="Buscar usuarios...">
             <button type="submit">Buscar</button>
         </form>
-        <table class="table">
+        <table class="table-responsive">
             <thead>
               <tr>
                 <th scope="col">CI</th>

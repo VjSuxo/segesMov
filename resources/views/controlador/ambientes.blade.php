@@ -91,7 +91,7 @@ box-shadow: 10px 10px 9px 0px rgba(0,0,0,0.67);
             <a class="btn btn-primary" href="{{  route('controlador.crearInfra') }}">Crear Infraestructura</a>
             <a class="btn btn-primary" href="{{  route('controlador.crearAmbiente') }}">Crear Ambiente</a>
             <div class="table-responsive">
-                <table class="table">
+                <table class="table-responsive">
                     <thead>
                         <tr>
                           <th scope="col">ID</th>
