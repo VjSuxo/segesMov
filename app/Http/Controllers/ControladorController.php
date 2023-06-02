@@ -157,7 +157,7 @@ class ControladorController extends Controller
         $pdf->setPaper('A4', 'landscape');
         $pdf->render();
         $nombreArch = $usuario->id.'.pdf';
-            $pdf->save(public_path('pdf/'.$nombreArch));
+            $pdf->save(('public/pdf/'.$nombreArch));
             $ge = Carbon::now()->toDateString();
           $cer =  Certificado::create([
             'fecha' => $ge,
