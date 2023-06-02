@@ -158,7 +158,7 @@ class ControladorController extends Controller
 
     public function generarPDF(User $usuario,Evento $evento){
 
-
+        return view('certificado', [ 'usuario'=>$usuario , 'evento'=>$evento] );
         $css = file_get_contents(public_path('css/style_certificado.css'));
         $pdf = new Dompdf();
         $pdf->loadHtml('<style>' . $css . '</style>' . view('certificado', [ 'usuario'=>$usuario , 'evento'=>$evento] ));
