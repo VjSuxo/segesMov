@@ -257,24 +257,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         </ul>
     </div>
     <div class="cuerpo">
-        <div class="tarjeta">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <img src="/storage/icons/icon_user.png" class="bordeImg img-thumbnail rounded-start" alt="">
-                    <div class="contenedor-card">
-                        <ul class="lista">
-                            <li class="lista-Active">
-                                <h3>Mi Perfil</h3>
-                            </li>
-                            <li>
-                                <h3>Cerrar Sesion</h3>
-                            </li>
-                        </ul>
-                    </div>
 
-                </div>
-              </div>
-        </div>
         <div class="informacion">
             <div class="titulo">
                 <h1 class="elemento">MIS EVENTOS</h1>
