@@ -234,7 +234,16 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     border-radius: 10px;
     text-decoration: underline;
   }
+  @media (min-width: 768px) {
+  .row-cols-md-2 {
+    flex-wrap: wrap;
+  }
 
+  .col-md-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
 
 
 </style>
@@ -273,30 +282,30 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 
             <div class="row row-cols-1 row-cols-md-2 g-4">
 
-            @foreach ( $eventos as $evento )
-                <div class="col">
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="/storage/icons/tarea.png" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title"> {{ $evento->nombre }} </h5>
+                @foreach ( $eventos as $evento )
+                    <div class="col">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/storage/icons/tarea.png" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title"> {{ $evento->nombre }} </h5>
 
-                                    <a href="{{ route('user.evento-index',$evento->id)}}" class="btn">Entrar</a>
+                                        <a href="{{ route('user.evento-index',$evento->id)}}" class="btn">Entrar</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
 
 
 
 
+            </div>
         </div>
-    </div>
 
 
 </x-layouts>

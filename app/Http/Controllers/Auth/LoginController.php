@@ -42,70 +42,45 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-
-
-
         $input = $request->all();
-
-
-
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
             //'g-recaptcha-response' => ['required',new \App\Rules\Recaptcha]
         ]);
-
         $auditoria = new Auditoria();
-
-
-
-
-
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {
-            if (auth()->user()->role == 'admin')
-            {
+            if (auth()->user()->role == 'admin'){
                 $auditoria->user_id = auth()->user()->id;
                 $auditoria->accion = 'Inicio de sesión';
                 $auditoria->modelo = 'Administrador';
-               // $auditoria->valores_viejos = null;
-              //  $auditoria->valores_nuevos = null;
                 $auditoria->save();
               return redirect()->route('admin.home');
             }
-            else if (auth()->user()->role == 'controlador')
-            {
+            else if (auth()->user()->role == 'controlador'){
                 $auditoria->user_id = auth()->user()->id;
                 $auditoria->accion = 'Inicio de sesión';
                 $auditoria->modelo = 'Controlador';
-              //  $auditoria->valores_viejos = null;
-               // $auditoria->valores_nuevos = null;
                 $auditoria->save();
               return redirect()->route('controlador.home');
             }
-            else if (auth()->user()->role == 'expositor')
-            {
+            else if (auth()->user()->role == 'expositor'){
                 $auditoria->user_id = auth()->user()->id;
                 $auditoria->accion = 'Inicio de sesión';
                 $auditoria->modelo = 'Expositor';
-               // $auditoria->valores_viejos = null;
-               // $auditoria->valores_nuevos = null;
                 $auditoria->save();
               return redirect()->route('expositor.Index');
             }
-            else
-            {
+            else{
                 $auditoria->user_id = auth()->user()->id;
                 $auditoria->accion = 'Inicio de sesión';
                 $auditoria->modelo = 'Usuario';
-                //$auditoria->valores_viejos = null;
-                //$auditoria->valores_nuevos = null;
                 $auditoria->save();
               return redirect()->route('user.home');
             }
         }
-        else
-        {
+        else{
             return redirect()
             ->route('login')
             ->with('error','Incorrect email or password!.');

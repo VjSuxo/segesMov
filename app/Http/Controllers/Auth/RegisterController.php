@@ -70,7 +70,6 @@ class RegisterController extends Controller
 
     protected function create(array $data )
     {
-
         $user = User::create([
             'id' => $data['ci'],
             'name' => $data['name'],
@@ -98,9 +97,6 @@ class RegisterController extends Controller
 
             'usuario_id' => $user->id,
         ]);
-
-   
-
         return $user;
     }
 }

@@ -230,12 +230,11 @@ class ControladorController extends Controller
 
     public function generarEvento(Request $request)
     {
-        //return $request;
-        $request->validate([
-            'imagen' => 'required|image'
-        ]);
-        $imagens =  $request->file('imagen')->store('public/baner');
-        $url = Storage::url($imagens);
+        //$request->validate([
+        //    'imagen' => 'required|image'
+        //]);
+       // $imagens =  $request->file('imagen')->store('public/baner');
+       // $url = Storage::url($imagens);
 
         $controlador = Controlador::where('usuario_id',Auth::id())->first();
         $evento = Evento::create([
@@ -244,11 +243,8 @@ class ControladorController extends Controller
             'tipo'           => $request->tipo,
             'estado'         => 1,
             'controlador_id' => $controlador->id,
-            'url'            => $url,
+         //   'url'            => $url,
         ]);
-
-
-        //return $evento;
         return redirect()->route('controlador.agregarTema',['evento'=>$evento->id]);
         return view('/controlador/crearTema',['evento'=>$evento, 'expositores'=>$expo]);
     }
@@ -263,7 +259,6 @@ class ControladorController extends Controller
 
     public function storeTema(Evento $evento,Request $request)
     {
-        //return $request;
         $tema = Tema::create([
             'nombre' => $request->nombre,
             'descripcion' => $request->descripcion,
@@ -291,7 +286,6 @@ class ControladorController extends Controller
 
     public function updateTema(Evento $evento, Tema $tema,Request $request)
     {
-        //return $request;
         $tema->update([
             'nombre' => $request->nombre,
             'descripcion' => $request->descripcion,
@@ -320,9 +314,7 @@ class ControladorController extends Controller
 
     public function eliminarEvento(Evento $evento)
     {
-        //return $evento->certificado;
         foreach ($evento->temas as $tema) {
-            // Eliminar el contenido relacionado con el tema
             foreach ($tema->contenido as $contenido) {
                 $contenido->delete();
             }
